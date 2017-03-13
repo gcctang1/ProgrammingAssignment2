@@ -1,22 +1,26 @@
 ##This script consists of two functions: (1) makeCacheMatrix, a special "matrix" will be created; and (2) cacheSolve, where the inverse of the Matrix will be cached. 
-## To operate, create an object "AMat" by the command AMat <- makeCacheMatrix(A), where A is an inversible matrix.
-## To retrieve A, type AMat$get()
-## To calculate and cache the inverse of A, type cachemean(AMat)
-## To retrieve the inverse of A, type AMat$getinverse()
+##As an example,create an object "AMat" by the command AMat <- makeCacheMatrix(A), where A is an inversible matrix.
+##To retrieve A, use the command AMat$get()
+##To calculate and cache the inverse of A, use the command cachemean(AMat)
+##To retrieve the inverse of A, use the command AMat$getinverse()
+##The inverse of A is cached so recaculation is not required.
+##If another object, e.g. BMat <- makeCacheMatrix(A)
+
 
 makeCacheMatrix <- function(x = matrix()) {
         
 ##Initialize the objects inv
 	inv <- NULL
 
-##Assign the matrix input to object x, and NULL to object inv,
+##Assign the matrix input to object x, and NULL to object inv
         set <- function(y) {
                 x <<- y
                 inv <<- NULL
         }
-        get <- function() x
+##Return the matrix object x
+	get <- function() x
 
-##Assign the calculated inverse value by the cacheSolve function to the object inv
+##Assign the inverse value calculated by the cacheSolve function to the object inv
         setinverse <- function(inverse) inv <<- inverse
 
 ##Returns the object inv as output
