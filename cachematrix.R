@@ -4,8 +4,8 @@
 ##To calculate and cache the inverse of A, use the command cachemean(AMat)
 ##To retrieve the inverse of A, use the command AMat$getinverse()
 ##The inverse of A is cached so recaculation is not required.
-##If another object, e.g. BMat <- makeCacheMatrix(A)
-
+##If another object, e.g. BMat <- makeCacheMatrix(B), is created, then NULL is assiged to object inv.
+##The inverse can be calculated with the command cachemean(BMat), and so on.
 
 makeCacheMatrix <- function(x = matrix()) {
         
